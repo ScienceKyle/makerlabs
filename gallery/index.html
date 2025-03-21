@@ -1,0 +1,571 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Gallery - Maker Labs</title>
+<meta name="description" content="An amazing website.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Maker Labs">
+<meta property="og:title" content="Gallery">
+<meta property="og:url" content="https://www.makerlabs.space/gallery/">
+
+
+  <meta property="og:description" content="An amazing website.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://www.makerlabs.space/gallery/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Maker Labs Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Logo.png" alt="Maker Labs"></a>
+        
+        <a class="site-title" href="/">
+          Maker Labs
+          <span class="site-subtitle">Information, Innovation, Ideation, Invention</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/gallery/"
+                
+                
+              >Gallery</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tools/"
+                
+                
+              >Tools</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <h2>Photo Gallery</h2>
+<div id="gallery" class="gallery-container"></div>
+<div id="loading" style="display: none;">Loading...</div>
+
+<!-- Lightbox for full-size images -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" class="lightbox-img" />
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let gallery = document.getElementById("gallery");
+    let loading = document.getElementById("loading");
+
+    let images = [
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20181207_025756.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20181207_041446.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20181228_180611.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20181230_180118.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20181230_180129.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190504_155038.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190504_155158.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190504_163006.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190712_220813.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190820_002814.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190820_003732.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190820_003736.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190820_003812.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190820_004538.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190820_005702.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190820_005702~2.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20190909_005816.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20200322_200816.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20200425_232921.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20200501_155808.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20200624_054423.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/IMG_20200624_054435.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20201216_171828185.PORTRAIT.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20210416_051356740.NIGHT.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20211104_021251157.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220105_060625152.NIGHT.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220331_203544932.MP.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220331_203551791.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220401_044956241.MP.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220406_192747246.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220409_204130517.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220504_205520707.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220525_220155340.MP.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220926_043144589.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20220926_043202959.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20231209_230425229.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20231212_221238934.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20240516_210053728.RAW-01.COVER.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/PXL_20240628_192831671.jpg",
+            
+        
+            
+                "/assets/images/gallery/out/homelab1.jpg",
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    ];
+    
+    let page = 0;
+    let perPage = 40;
+
+    function createThumbnail(imageSrc) {
+        let container = document.createElement("div");
+        container.classList.add("gallery-item");
+
+        let link = document.createElement("a");
+        link.href = imageSrc;
+        link.setAttribute("onclick", "openLightbox(event, '" + imageSrc + "')");
+
+        let img = document.createElement("img");
+        img.src = imageSrc;
+        img.classList.add("gallery-thumbnail");
+
+        link.appendChild(img);
+        container.appendChild(link);
+        return container;
+    }
+
+    function loadImages() {
+        if (page * perPage >= images.length) return;
+        loading.style.display = "block";
+
+        setTimeout(() => {
+            for (let i = page * perPage; i < (page + 1) * perPage && i < images.length; i++) {
+                let thumbnail = createThumbnail(images[i]);
+                gallery.appendChild(thumbnail);
+            }
+            page++;
+            loading.style.display = "none";
+        }, 500);
+    }
+
+    window.addEventListener("scroll", function() {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+            loadImages();
+        }
+    });
+
+    loadImages();
+});
+
+// Lightbox functions
+function openLightbox(event, imageSrc) {
+    event.preventDefault();
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = imageSrc;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+<style>
+/* Gallery Grid */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+/* Thumbnail Images */
+.gallery-item {
+    flex-grow: 1;
+    min-width: 15%;
+    max-width: 60%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.gallery-thumbnail {
+    width: 98%;
+    height: 98%;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+}
+</style>
+
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ScienceKyle" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://www.makerlabs.space">Maker Labs</a></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

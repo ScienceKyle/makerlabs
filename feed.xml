@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-20T20:49:33-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>An amazing website.</subtitle><entry><title type="html">Homelab Setup</title><link href="https://www.makerlabs.space/homelab/post-1/" rel="alternate" type="text/html" title="Homelab Setup" /><published>2025-03-17T03:37:05-04:00</published><updated>2025-03-17T03:37:05-04:00</updated><id>https://www.makerlabs.space/homelab/post-1</id><content type="html" xml:base="https://www.makerlabs.space/homelab/post-1/"><![CDATA[<p>I’m building a homelab for virtualization and development of Ai applications and other random widgets.</p>
+
+<ul>
+  <li>
+    <p>Cisco 24port POE gigabit switch</p>
+  </li>
+  <li>pfSense
+    <ul>
+      <li>Intel(R) Core(TM) i5-7500 CPU 3.40GHZ</li>
+      <li>Intel i350-T4 4x gigabit NIC</li>
+    </ul>
+  </li>
+  <li>Supermicro X11DPH-T
+    <ul>
+      <li>Dual Xeon Gold 6138 (40C/80T, 2.0GHz, 3.7GHz boost)</li>
+      <li>160GB Hyinx DDR4-2666 ECC (10x16gb)</li>
+      <li>4x gtx1080</li>
+      <li>Dual 10GbE</li>
+      <li>2x2tb NVMe m.2</li>
+      <li>4x10tb HHD</li>
+      <li>IPMI remote management</li>
+    </ul>
+  </li>
+  <li>AMD Ryzen 3500
+    <ul>
+      <li>RTX 2080ti</li>
+      <li>2x gtx1080</li>
+      <li>2TB pcie4 NVME</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/gallery/out/homelab1.jpg" alt="pfSense router" /></p>]]></content><author><name></name></author><category term="homelab" /><summary type="html"><![CDATA[I’m building a homelab for virtualization and development of Ai applications and other random widgets.]]></summary></entry></feed>
