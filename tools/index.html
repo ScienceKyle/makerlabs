@@ -209,52 +209,54 @@ h3 {
 
 <script>
 const unitCategories = {
-    Distance: [
-        { name: "Planck Length (ℓP)", factor: 1.616255e-32, offset: 0 },
-        { name: "Femtometers (fm)", factor: 1e-12, offset: 0 },
-        { name: "Picometers (pm)", factor: 1e-9, offset: 0 },
-        { name: "Nanometers (nm)", factor: 1e-6, offset: 0 },
-        { name: "Micrometers (µm)", factor: 0.001, offset: 0 },
-        { name: "Millimeters (mm)", factor: 1, offset: 0 },
-        { name: "Centimeters (cm)", factor: 10, offset: 0 },
-        { name: "Inches (in)", factor: 25.4, offset: 0 },
-        { name: "Feet (ft)", factor: 304.8, offset: 0 },
-        { name: "Yards (yd)", factor: 914.4, offset: 0 },
-        { name: "Meters (m)", factor: 1000, offset: 0 },
-        { name: "Kilometers (km)", factor: 1e6, offset: 0 },
-        { name: "Miles (mi)", factor: 1.609344e6, offset: 0 },
-        { name: "Astronomical Units (AU)", factor: 1.496e11, offset: 0 },
-        { name: "Light-Years (ly)", factor: 9.461e15, offset: 0 },
-        { name: "Parsecs (pc)", factor: 3.086e16, offset: 0 },
-        { name: "Megaparsecs (Mpc)", factor: 3.086e22, offset: 0 },
-        { name: "Gigaparsecs (Gpc)", factor: 3.086e25, offset: 0 },
-        { name: "Observable Universe", factor: 8.8e26, offset: 0 }
-    ],
+Distance: [
+    { name: "Planck Length (ℓP)", factor: 1.616255e-35, offset: 0 },  // Smallest possible length in physics
+    { name: "Electron Diameter", factor: 2.8e-16, offset: 0 },
+    { name: "Hydrogen Atom Diameter", factor: 1e-10, offset: 0 },
+    { name: "Virus (Average)", factor: 1e-7, offset: 0 },  // Common virus size (~100 nm)
+    { name: "mil", factor: 2.54e-5, offset: 0 },  // Thousandth of an inch (PCB traces, machining)
+    { name: "Inches (in)", factor: 0.0254, offset: 0 },  // Common length unit
+    { name: "Yards (yd)", factor: 0.9144, offset: 0 },  // Yardstick
+    { name: "Meters (m)", factor: 1, offset: 0 },  // SI Base Unit
+    { name: "Burj Khalifa (Tallest Building)", factor: 828, offset: 0 },  // 828 meters (2,717 ft)
+    { name: "Miles (mi)", factor: 1609.344, offset: 0 },  // Standard for long distances
+    { name: "Mount Everest", factor: 8848, offset: 0 },  
+    { name: "Eart-Moon (AU)", factor: 3.83e8, offset: 0 },  
+    { name: "Eart-Sun (AU)", factor: 1.496e11, offset: 0 },  
+    { name: "Light-Years (ly)", factor: 9.461e15, offset: 0 },  
+    { name: "Megaparsecs (Mpc)", factor: 3.086e22, offset: 0 },
+    { name: "Observable Universe", factor: 8.8e26, offset: 0 }  // Largest known scale
+ ],
     Time: [
         { name: "Planck Time", factor: 5.391e-44, offset: 0 },
-        { name: "Hitchhiker's Fluctuation Moment", factor: 1e-10, offset: 0 },
         { name: "Shake (nuclear physics)", factor: 1e-8, offset: 0 },
         { name: "Jiffy (electronics)", factor: 1/60, offset: 0 },
         { name: "Seconds (s)", factor: 1, offset: 0 },
-        { name: "Minutes (min)", factor: 60, offset: 0 },
         { name: "Hours (h)", factor: 3600, offset: 0 },
         { name: "Days", factor: 86400, offset: 0 },
-        { name: "Dune Arrakis Cycle", factor: 88775, offset: 0 },
-        { name: "Star Trek Stardate", factor: 86400, offset: 0 },
+        { name: "Martian Sol", factor: 88775.244, offset: 0 },
+        { name: "Work Year", factor: 7488000, offset: 0 },
         { name: "Years", factor: 3.154e7, offset: 0 },
-        { name: "Galactic Year", factor: 2.25e18, offset: 0 }
+    { name: "Galactic Year", factor: 7.1e15, offset: 0 },  // Time for the Solar System to orbit the Milky Way
+    { name: "Age of the Sun", factor: 1.44e17, offset: 0 },  // Sun is ~4.57 billion years old
+    { name: "Age of the Universe", factor: 4.35e17, offset: 0 },  // Universe is ~13.8 billion years old
+    { name: "Age of Marvin (Hitchhiker's Guide)", factor: 1.61e19, offset: 0 }  // 37× older than the universe
     ],
     Mass: [
-        { name: "Planck Mass", factor: 2.176e-8, offset: 0 },
-        { name: "Grams (g)", factor: 1, offset: 0 },
-        { name: "Ounces (oz)", factor: 28.3495, offset: 0 },
-        { name: "Pounds (lb)", factor: 453.592, offset: 0 },
-        { name: "Kilograms (kg)", factor: 1000, offset: 0 },
-        { name: "Metric Tons (t)", factor: 1e6, offset: 0 },
-        { name: "Dune Spice Load", factor: 750000, offset: 0 },
-        { name: "Warhammer 40K Titan Load", factor: 1e9, offset: 0 },
-        { name: "Hitchhiker's Improbability Mass", factor: 4.2e42, offset: 0 }
-    ],
+    { name: "Planck Mass", factor: 2.176e-8, offset: 0 },  
+    { name: "Grams (g)", factor: 0.001, offset: 0 },  
+    { name: "Ounces (oz)", factor: 0.0283495, offset: 0 },  
+    { name: "Pounds (lb)", factor: 0.453592, offset: 0 },  
+    { name: "Kilograms (kg)", factor: 1, offset: 0 },  
+    { name: "Metric Tons (t)", factor: 1e3, offset: 0 },  
+    { name: "Cargo Ship Anchor", factor: 1e6, offset: 0 },
+    { name: "All Humans on Earth", factor: 3.9e11, offset: 0 }, 
+    { name: "Mount Everest", factor: 1.6e12, offset: 0 },
+    { name: "Earth", factor: 5.972e24, offset: 0 },  
+    { name: "Sun", factor: 1.989e30, offset: 0 },  
+    { name: "Milky Way Galaxy", factor: 1.5e42, offset: 0 },  
+    { name: "Observable Universe", factor: 1.5e53, offset: 0 }  
+],
     Speed: [
         { name: "Meters per second (m/s)", factor: 1, offset: 0 },
         { name: "Kilometers per hour (km/h)", factor: 3.6, offset: 0 },
@@ -262,20 +264,24 @@ const unitCategories = {
         { name: "Speed of Light (c)", factor: 299792458, offset: 0 },
         { name: "Star Wars Sublight Standard", factor: 3e5, offset: 0 },
         { name: "Star Trek Warp 1", factor: 3e8, offset: 0 },
-        { name: "Star Trek Warp 9.9", factor: 2.5e12, offset: 0 },
-        { name: "Dune Heighliner Jump", factor: 1e15, offset: 0 },
-        { name: "Hitchhiker's Infinite Improbability Velocity", factor: 1e42, offset: 0 }
+        { name: "Star Trek Warp 9.9", factor: 3e8*21473, offset: 0 },
+        { name: "Big Bang", factor: 3e8*10e23, offset: 0 },
+        { name: "Hitchhiker's Infinite Improbability Velocity", factor: 1e-10000, offset: -1e42 }
     ],
     Energy: [
         { name: "Joule (J)", factor: 1, offset: 0 },
         { name: "Calorie (cal)", factor: 4.184, offset: 0 },
         { name: "Kilowatt-hour (kWh)", factor: 3600000, offset: 0 },
-        { name: "Star Wars Blaster Bolt", factor: 5e6, offset: 0 },
-        { name: "Star Trek Phaser (max setting)", factor: 1e9, offset: 0 },
-        { name: "The Expanse Railgun Shot", factor: 2e9, offset: 0 },
-        { name: "Dune Holtzman Shield Energy", factor: 1e12, offset: 0 },
-        { name: "Warhammer 40K Plasma Gun Discharge", factor: 5e12, offset: 0 },
-        { name: "Hitchhiker's Total Perspective Energy Unit", factor: 1e50, offset: 0 }
+        { name: "Star Wars Blaster", factor: 6.2e5, offset: 0 },
+        { name: "Star Trek Phaser (max setting)", factor: 3e9, offset: 0 },
+        { name: "The Expanse Railgun Shot", factor: 6.4e10, offset: 0 },
+        { name: "Kiloton (TNT)", factor: 4.184e13, offset: 0 },
+        { name: "WW2 Nuclear Bomb", factor: 6.3e14, offset: 0 },
+        { name: "Tsar Bomba", factor: 2.1e18, offset: 0 },
+        { name: "Dinosaur Asteroid", factor: 1e24, offset: 0 },
+        { name: "Sun (1 sec)", factor: 3.8e27, offset: 0 },
+        { name: "Supernova (Type 1a)", factor: 1e45, offset: 0 },
+        { name: "Big Bang", factor: 1e69, offset: 0 }
     ],
     Temperature: [
         { name: "Celsius (°C)", factor: 1, offset: 0 },        
@@ -285,7 +291,11 @@ const unitCategories = {
         { name: "Delisle (°D)", factor: -2/3, offset: 100 },   
         { name: "Newton (°N)", factor: 100/33, offset: 0 },    
         { name: "Réaumur (°Ré)", factor: 5/4, offset: 0 },     
-        { name: "Rømer (°Rø)", factor: 40/21, offset: -7.5 }   
+        { name: "Rømer (°Rø)", factor: 40/21, offset: -7.5 },
+        { name: "Sun (surface)", factor: 5505, offset: 0 },
+        { name: "Sun (core)", factor: 15.7e6, offset: 0 },
+        { name: "H-Bomb (core)", factor: 100e6, offset: 0 },
+        { name: "Max Temperature (Planck)", factor: 1.4168e33, offset: 0 }   
     ]
 };
 
@@ -311,7 +321,7 @@ function createConverters() {
 initializeBaseUnits();
 
 }
-
+/*
 function updateValues(category, changedIndex) {
     const units = unitCategories[category];
     const baseValue = parseFloat(document.getElementById(`${category}-${changedIndex}`).value) || 0;
@@ -334,8 +344,32 @@ function updateValues(category, changedIndex) {
             document.getElementById(`${category}-${index}`).value = convertedValue;
         }
     });
+}*/
+function updateValues(category, changedIndex) {
+    const units = unitCategories[category];
+    const baseValue = parseFloat(document.getElementById(`${category}-${changedIndex}`).value) || 0;
+    const baseUnit = units[changedIndex];
+    if (baseUnit.name==="Hitchhiker's Infinite Improbability Velocity"){
+      document.getElementById(`${category}-${changedIndex}`).value = 4.2e42;
+    } else {
+    // Step 1: Convert input to a "base reference value"
+    let referenceValue = (baseValue + baseUnit.offset) * baseUnit.factor;
+    
+    
+    // Step 2: Convert from reference value to all other units
+    units.forEach((unit, index) => {
+        if (index !== changedIndex) {
+            let convertedValue = (referenceValue / unit.factor) - unit.offset;
+           if (unit.name==="Hitchhiker's Infinite Improbability Velocity"){
+            convertedValue = 4.2e42;
+           }
+    document.getElementById(`${category}-${index}`).value = convertedValue;
+        }
+    
+      
+  });
+  }
 }
-
 function initializeBaseUnits() {
     Object.keys(unitCategories).forEach(category => {
         const baseUnitIndex = unitCategories[category].findIndex(unit => unit.factor === 1);
