@@ -1,0 +1,45 @@
+/* Style for the code block container */
+.code-block-container {
+  background-color: #1e1e1e; /* Black background */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.code-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.code-header button {
+  background-color: #828282;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.code-header button:hover {
+  background-color: #bcbabb;
+}
+
+.code-block::-webkit-scrollbar {
+  height: 10px;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

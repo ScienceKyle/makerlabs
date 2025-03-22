@@ -1,4 +1,160 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-21T21:08:10-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>A place for me to explore my curiosity and share it with the wotld</subtitle><entry><title type="html">Custom Code Container</title><link href="https://www.makerlabs.space/post/code-preview/" rel="alternate" type="text/html" title="Custom Code Container" /><published>2025-03-21T18:46:47-04:00</published><updated>2025-03-21T18:46:47-04:00</updated><id>https://www.makerlabs.space/post/code-preview</id><content type="html" xml:base="https://www.makerlabs.space/post/code-preview/"><![CDATA[<p>I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom <code>_include/after-content.html</code> instead of modifying the default layout. The change gets applied to all <code>&#123;% highlight xxxx %&#125;</code> sections and gets implemented at build time. This likely will only work when building the site locally.</p>
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Custom Code Container - Maker Labs</title>
+<meta name="description" content="I wasn&#39;t happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom _include/after-content.html instead of modifying the default layout. The change gets applied to all &#123;% highlight xxxx %&#125; sections and gets implemented at build time. This likely will only work when building the site locally.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Maker Labs">
+<meta property="og:title" content="Custom Code Container">
+<meta property="og:url" content="https://www.makerlabs.space/post/code-preview/">
+
+
+  <meta property="og:description" content="I wasn&#39;t happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom _include/after-content.html instead of modifying the default layout. The change gets applied to all &#123;% highlight xxxx %&#125; sections and gets implemented at build time. This likely will only work when building the site locally.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-21T18:46:47-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.makerlabs.space/post/code-preview/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+ 
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Maker Labs Feed">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Logo.png" alt="Maker Labs"></a>
+        
+        <a class="site-title" href="/">
+          Maker Labs
+          <span class="site-subtitle">Information, Innovation, Ideation, Invention</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/gallery/"
+                
+                
+              >Gallery</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tools/"
+                
+                
+              >Tools</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Custom Code Container</h1>
+    
+    <p>I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom <code>_include/after-content.html</code> instead of modifying the default layout. The change gets applied to all <code>&#123;% highlight xxxx %&#125;</code> sections and gets implemented at build time. This likely will only work when building the site locally.</p>
 
 <h2 id="_pluginshighlight_overriderb">_plugins/highlight_override.rb</h2>
 <p>This puts the highlighted code block into code-block-container and adds a label for the code type and a copy code button.
@@ -123,61 +279,128 @@
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
   </div>
-</div>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom _include/after-content.html instead of modifying the default layout. The change gets applied to all &#123;% highlight xxxx %&#125; sections and gets implemented at build time. This likely will only work when building the site locally.]]></summary></entry><entry><title type="html">Favicon Script</title><link href="https://www.makerlabs.space/favicon-script/" rel="alternate" type="text/html" title="Favicon Script" /><published>2025-03-21T11:53:58-04:00</published><updated>2025-03-21T11:53:58-04:00</updated><id>https://www.makerlabs.space/favicon-script</id><content type="html" xml:base="https://www.makerlabs.space/favicon-script/"><![CDATA[<p>Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux</p>
+</div>
 
-<p><img src="../favicon.ico" alt="favicon.ico" /></p>
 
-<div class="code-block-container">
-  <div class="code-header">
-    <strong>shell</strong>
-    <button class="copy-button">Copy Code</button>
   </div>
-  <div class="code-block">
-    <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">cd </span>assets/images/
-magick Logo.png <span class="nt">-resize</span> 16x16 favicon-16.png
-magick Logo.png <span class="nt">-resize</span> 32x32 favicon-32.png
-magick Logo.png <span class="nt">-resize</span> 48x48 favicon-48.png
-magick Logo.png <span class="nt">-resize</span> 64x64 favicon-64.png
-magick Logo.png <span class="nt">-resize</span> 128x128 favicon-128.png
-magick Logo.png <span class="nt">-resize</span> 144x144 favicon-144.png
-magick Logo.png <span class="nt">-resize</span> 180x180 favicon-180.png
-magick Logo.png <span class="nt">-resize</span> 192x192 favicon-192.png
-magick Logo.png <span class="nt">-resize</span> 256x256 favicon-256.png
-magick Logo.png <span class="nt">-resize</span> 512x512 favicon-512.png
-magick favicon-16.png favicon-32.png favicon-48.png favicon-64.png favicon-128.png favicon-144.png favicon-180.png favicon-192.png favicon-256.png favicon-512.png favicon.ico
-<span class="nb">mv </span>favicon.ico ../../
-<span class="nb">cd</span> ../../</code></pre></figure>
-  </div>
-</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux]]></summary></entry><entry><title type="html">Homelab Setup</title><link href="https://www.makerlabs.space/homelab/post-1/" rel="alternate" type="text/html" title="Homelab Setup" /><published>2025-03-17T03:37:05-04:00</published><updated>2025-03-17T03:37:05-04:00</updated><id>https://www.makerlabs.space/homelab/post-1</id><content type="html" xml:base="https://www.makerlabs.space/homelab/post-1/"><![CDATA[<p>I’m building a homelab for virtualization and development of Ai applications and other random widgets.</p>
+</div>
 
-<ul>
-  <li>
-    <p>Cisco 24port POE gigabit switch</p>
-  </li>
-  <li>pfSense
-    <ul>
-      <li>Intel(R) Core(TM) i5-7500 CPU 3.40GHZ</li>
-      <li>Intel i350-T4 4x gigabit NIC</li>
-    </ul>
-  </li>
-  <li>Supermicro X11DPH-T
-    <ul>
-      <li>Dual Xeon Gold 6138 (40C/80T, 2.0GHz, 3.7GHz boost)</li>
-      <li>160GB Hyinx DDR4-2666 ECC (10x16gb)</li>
-      <li>4x gtx1080</li>
-      <li>Dual 10GbE</li>
-      <li>2x2tb NVMe m.2</li>
-      <li>4x10tb HHD</li>
-      <li>IPMI remote management</li>
-    </ul>
-  </li>
-  <li>AMD Ryzen 3500
-    <ul>
-      <li>RTX 2080ti</li>
-      <li>2x gtx1080</li>
-      <li>2TB pcie4 NVME</li>
-    </ul>
-  </li>
-</ul>
+      <style>
 
-<p><img src="/assets/images/gallery/homelab1.jpg" alt="pfSense router" /></p>]]></content><author><name></name></author><category term="homelab" /><summary type="html"><![CDATA[I’m building a homelab for virtualization and development of Ai applications and other random widgets.]]></summary></entry></feed>
+/* Style for the code block container */
+.code-block-container {
+  background-color: #1e1e1e; /* Black background */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.code-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.code-header button {
+  background-color: #828282;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.code-header button:hover {
+  background-color: #bcbabb;
+}
+
+.code-block::-webkit-scrollbar {
+  height: 10px;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
+
+
+<script>
+// Adding the Copy functionality for each code block
+const copyButtonLabel = "Copy Code";
+
+// Find all code blocks
+let blocks = document.querySelectorAll(".code-block-container");
+
+blocks.forEach((block) => {
+  let button = block.querySelector(".copy-button");
+
+  // Add copy button functionality if Clipboard API is supported
+  if (navigator.clipboard) {
+    button.addEventListener("click", async () => {
+      let code = block.querySelector("code");
+      let text = code.innerText;
+
+      await navigator.clipboard.writeText(text);
+
+      // Change button text to "Code Copied" after copying
+      button.innerText = "Code Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    });
+  }
+});
+</script>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ScienceKyle" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://www.makerlabs.space">Maker Labs</a></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

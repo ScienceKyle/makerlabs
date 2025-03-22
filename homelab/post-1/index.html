@@ -53,8 +53,12 @@
 <!-- end _includes/seo.html -->
 
 
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+ 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Maker Labs Feed">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script type="text/javascript">
@@ -66,6 +70,7 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
 
 
 
@@ -186,7 +191,84 @@
   </div>
 </div>
 
-      
+      <style>
+
+/* Style for the code block container */
+.code-block-container {
+  background-color: #1e1e1e; /* Black background */
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.code-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.code-header button {
+  background-color: #828282;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.code-header button:hover {
+  background-color: #bcbabb;
+}
+
+.code-block::-webkit-scrollbar {
+  height: 10px;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
+
+
+<script>
+// Adding the Copy functionality for each code block
+const copyButtonLabel = "Copy Code";
+
+// Find all code blocks
+let blocks = document.querySelectorAll(".code-block-container");
+
+blocks.forEach((block) => {
+  let button = block.querySelector(".copy-button");
+
+  // Add copy button functionality if Clipboard API is supported
+  if (navigator.clipboard) {
+    button.addEventListener("click", async () => {
+      let code = block.querySelector("code");
+      let text = code.innerText;
+
+      await navigator.clipboard.writeText(text);
+
+      // Change button text to "Code Copied" after copying
+      button.innerText = "Code Copied";
+
+      setTimeout(() => {
+        button.innerText = copyButtonLabel;
+      }, 700);
+    });
+  }
+});
+</script>
     </div>
 
     

@@ -10,22 +10,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Maker Labs - Maker Labs</title>
-<meta name="description" content="A place for me to explore my curiosity and share it with the wotld">
+<!-- begin _includes/seo.html --><title>Favicon Script - Maker Labs</title>
+<meta name="description" content="Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux">
 
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Maker Labs">
-<meta property="og:title" content="Maker Labs">
-<meta property="og:url" content="https://www.makerlabs.space/default/">
+<meta property="og:title" content="Favicon Script">
+<meta property="og:url" content="https://www.makerlabs.space/favicon-script/">
 
 
-  <meta property="og:description" content="A place for me to explore my curiosity and share it with the wotld">
-
-
-
+  <meta property="og:description" content="Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux">
 
 
 
@@ -33,9 +30,14 @@
 
 
 
+  <meta property="article:published_time" content="2025-03-21T11:53:58-04:00">
 
 
-<link rel="canonical" href="https://www.makerlabs.space/default/">
+
+
+
+
+<link rel="canonical" href="https://www.makerlabs.space/favicon-script/">
 
 
 
@@ -80,7 +82,7 @@
 
   </head>
 
-  <body class="layout--default">
+  <body class="layout--archive">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -140,25 +142,46 @@
 
 
     <div class="initial-content">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      
 
-<div class="container">
-  <h2>Oops...</h2>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>I must be working on this.</p>
+
+<div id="main" role="main">
+  
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Favicon Script</h1>
+    
+    <p>Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux</p>
+
+<p><img src="../favicon.ico" alt="favicon.ico" /></p>
+
+<div class="code-block-container">
+  <div class="code-header">
+    <strong>shell</strong>
+    <button class="copy-button">Copy Code</button>
+  </div>
+  <div class="code-block">
+    <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">cd </span>assets/images/
+magick Logo.png <span class="nt">-resize</span> 16x16 favicon-16.png
+magick Logo.png <span class="nt">-resize</span> 32x32 favicon-32.png
+magick Logo.png <span class="nt">-resize</span> 48x48 favicon-48.png
+magick Logo.png <span class="nt">-resize</span> 64x64 favicon-64.png
+magick Logo.png <span class="nt">-resize</span> 128x128 favicon-128.png
+magick Logo.png <span class="nt">-resize</span> 144x144 favicon-144.png
+magick Logo.png <span class="nt">-resize</span> 180x180 favicon-180.png
+magick Logo.png <span class="nt">-resize</span> 192x192 favicon-192.png
+magick Logo.png <span class="nt">-resize</span> 256x256 favicon-256.png
+magick Logo.png <span class="nt">-resize</span> 512x512 favicon-512.png
+magick favicon-16.png favicon-32.png favicon-48.png favicon-64.png favicon-128.png favicon-144.png favicon-180.png favicon-192.png favicon-256.png favicon-512.png favicon.ico
+<span class="nb">mv </span>favicon.ico ../../
+<span class="nb">cd</span> ../../</code></pre></figure>
+  </div>
+</div>
+
+  </div>
 </div>
 
       <style>
