@@ -24,7 +24,7 @@ var store = [{
         "teaser": "/assets/images/Logo.svg"
       },{
         "title": "Thesaurus",
-        "excerpt":"Simple Thesaurus Lookup   Enter a word below to find its top synonyms.    Search   Synonyms:      ","categories": ["post"],
+        "excerpt":"Advanced Thesaurus Lookup   Select a query type, enter a word, and see results!        Synonyms     Similar Meaning     Sound Like     Related Adjectives     Related Nouns      Words that follow     Associated Words     Spelling Suggestions     Search   Results:      ","categories": ["post"],
         "tags": [],
         "url": "/post/thesaurus/",
         "teaser": "/assets/images/Logo.svg"
