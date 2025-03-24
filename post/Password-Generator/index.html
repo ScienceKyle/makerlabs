@@ -10,19 +10,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>password - Maker Labs</title>
-<meta name="description" content="Secure Password Generator">
+<!-- begin _includes/seo.html --><title>Password Generator - Maker Labs</title>
+<meta name="description" content="Use this tool to generate a secure password with customizable options.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Maker Labs">
-<meta property="og:title" content="password">
-<meta property="og:url" content="https://www.makerlabs.space/post/password/">
+<meta property="og:title" content="Password Generator">
+<meta property="og:url" content="https://www.makerlabs.space/post/Password-Generator/">
 
 
-  <meta property="og:description" content="Secure Password Generator">
+  <meta property="og:description" content="Use this tool to generate a secure password with customizable options.">
 
 
 
@@ -37,7 +37,7 @@
 
 
 
-<link rel="canonical" href="https://www.makerlabs.space/post/password/">
+<link rel="canonical" href="https://www.makerlabs.space/post/Password-Generator/">
 
 
 
@@ -157,67 +157,59 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">password</h1>
+      <h1 id="page-title" class="page__title">Password Generator</h1>
     
-    <h1>Secure Password Generator</h1>
-
-<p>Use this tool to generate a secure password with customizable options.</p>
+    <p>Use this tool to generate a secure password with customizable options.</p>
 
 <p><label for="length">Password Length:</label>
 <input type="number" id="length" min="6" max="64" value="16" /></p>
 
-<p><br /></p>
+<p><br />
+<button onclick="generatePassword()">Generate Password</button></p>
 
-<p><input type="checkbox" id="include-uppercase" checked="" />
-<label for="include-uppercase">Include Uppercase Letters (A-Z)</label></p>
-
-<p><br /></p>
-
-<p><input type="checkbox" id="include-lowercase" checked="" />
-<label for="include-lowercase">Include Lowercase Letters (a-z)</label></p>
-
-<p><br /></p>
-
-<p><input type="checkbox" id="include-numbers" checked="" />
-<label for="include-numbers">Include Numbers (0-9)</label></p>
-
-<p><br /></p>
-
-<p><input type="checkbox" id="include-symbols" />
-<label for="include-symbols">Include Symbols (!@#$%^&amp;*)</label></p>
-
-<p><br /><br /></p>
-
-<p><button onclick="generatePassword()">Generate Password</button></p>
-
-<p><strong>Generated Password:</strong></p>
 <p><input type="text" id="password-output" readonly="" style="width: 100%; font-size: 1.2em;" /></p>
 
 <script>
 function generatePassword() {
-    const length = document.getElementById('length').value;
-    const includeUppercase = document.getElementById('include-uppercase').checked;
-    const includeLowercase = document.getElementById('include-lowercase').checked;
-    const includeNumbers = document.getElementById('include-numbers').checked;
-    const includeSymbols = document.getElementById('include-symbols').checked;
+    const length = parseInt(document.getElementById('length').value, 10);
+    
+    const uppercase = "ABCDEFGHJKMNPQRSTUVWXYZ";
+    const lowercase = "abcdefghjkmnpqrstuvwxyz";
+    const numbers = "123456789";
+    const symbols = "!@#$%^&*";
 
-    let characters = "";
-    if (includeUppercase) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    if (includeLowercase) characters += "abcdefghijklmnopqrstuvwxyz";
-    if (includeNumbers) characters += "0123456789";
-    if (includeSymbols) characters += "!@#$%^&*";
+    let availableChars = "";
+    let guaranteedChars = [];
 
-    if (characters.length === 0) {
-        alert("Please select at least one character set.");
-        return;
+  
+        availableChars += uppercase;
+        guaranteedChars.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
+  
+        availableChars += lowercase;
+        guaranteedChars.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
+
+        availableChars += numbers;
+        guaranteedChars.push(numbers[Math.floor(Math.random() * numbers.length)]);
+    
+        availableChars += symbols;
+        guaranteedChars.push(symbols[Math.floor(Math.random() * symbols.length)]);
+
+
+    // Fill the rest of the password length with random choices
+    let remainingLength = length - guaranteedChars.length;
+    let passwordArray = guaranteedChars;
+
+    for (let i = 0; i < remainingLength; i++) {
+        passwordArray.push(availableChars[Math.floor(Math.random() * availableChars.length)]);
     }
 
-    let password = "";
-    for (let i = 0; i < length; i++) {
-        password += characters.charAt(Math.floor(Math.random() * characters.length));
+    // Shuffle the password to ensure randomness
+    for (let i = passwordArray.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [passwordArray[i], passwordArray[j]] = [passwordArray[j], passwordArray[i]];
     }
 
-    document.getElementById('password-output').value = password;
+    document.getElementById('password-output').value = passwordArray.join('');
 }
 </script>
 

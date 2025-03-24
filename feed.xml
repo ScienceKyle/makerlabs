@@ -1,64 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-24T09:43:13-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>A place for me to explore my curiosity and share it with the wotld</subtitle><entry><title type="html">password</title><link href="https://www.makerlabs.space/post/password/" rel="alternate" type="text/html" title="password" /><published>2025-03-23T17:13:39-04:00</published><updated>2025-03-23T17:13:39-04:00</updated><id>https://www.makerlabs.space/post/password</id><content type="html" xml:base="https://www.makerlabs.space/post/password/"><![CDATA[<h1>Secure Password Generator</h1>
-
-<p>Use this tool to generate a secure password with customizable options.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-24T13:29:50-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>A place for me to explore my curiosity and share it with the wotld</subtitle><entry><title type="html">Password Generator</title><link href="https://www.makerlabs.space/post/Password-Generator/" rel="alternate" type="text/html" title="Password Generator" /><published>2025-03-23T17:13:39-04:00</published><updated>2025-03-23T17:13:39-04:00</updated><id>https://www.makerlabs.space/post/Password-Generator</id><content type="html" xml:base="https://www.makerlabs.space/post/Password-Generator/"><![CDATA[<p>Use this tool to generate a secure password with customizable options.</p>
 
 <p><label for="length">Password Length:</label>
 <input type="number" id="length" min="6" max="64" value="16" /></p>
 
-<p><br /></p>
+<p><br />
+<button onclick="generatePassword()">Generate Password</button></p>
 
-<p><input type="checkbox" id="include-uppercase" checked="" />
-<label for="include-uppercase">Include Uppercase Letters (A-Z)</label></p>
-
-<p><br /></p>
-
-<p><input type="checkbox" id="include-lowercase" checked="" />
-<label for="include-lowercase">Include Lowercase Letters (a-z)</label></p>
-
-<p><br /></p>
-
-<p><input type="checkbox" id="include-numbers" checked="" />
-<label for="include-numbers">Include Numbers (0-9)</label></p>
-
-<p><br /></p>
-
-<p><input type="checkbox" id="include-symbols" />
-<label for="include-symbols">Include Symbols (!@#$%^&amp;*)</label></p>
-
-<p><br /><br /></p>
-
-<p><button onclick="generatePassword()">Generate Password</button></p>
-
-<p><strong>Generated Password:</strong></p>
 <p><input type="text" id="password-output" readonly="" style="width: 100%; font-size: 1.2em;" /></p>
 
 <script>
 function generatePassword() {
-    const length = document.getElementById('length').value;
-    const includeUppercase = document.getElementById('include-uppercase').checked;
-    const includeLowercase = document.getElementById('include-lowercase').checked;
-    const includeNumbers = document.getElementById('include-numbers').checked;
-    const includeSymbols = document.getElementById('include-symbols').checked;
+    const length = parseInt(document.getElementById('length').value, 10);
+    
+    const uppercase = "ABCDEFGHJKMNPQRSTUVWXYZ";
+    const lowercase = "abcdefghjkmnpqrstuvwxyz";
+    const numbers = "123456789";
+    const symbols = "!@#$%^&*";
 
-    let characters = "";
-    if (includeUppercase) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    if (includeLowercase) characters += "abcdefghijklmnopqrstuvwxyz";
-    if (includeNumbers) characters += "0123456789";
-    if (includeSymbols) characters += "!@#$%^&*";
+    let availableChars = "";
+    let guaranteedChars = [];
 
-    if (characters.length === 0) {
-        alert("Please select at least one character set.");
-        return;
+  
+        availableChars += uppercase;
+        guaranteedChars.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
+  
+        availableChars += lowercase;
+        guaranteedChars.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
+
+        availableChars += numbers;
+        guaranteedChars.push(numbers[Math.floor(Math.random() * numbers.length)]);
+    
+        availableChars += symbols;
+        guaranteedChars.push(symbols[Math.floor(Math.random() * symbols.length)]);
+
+
+    // Fill the rest of the password length with random choices
+    let remainingLength = length - guaranteedChars.length;
+    let passwordArray = guaranteedChars;
+
+    for (let i = 0; i < remainingLength; i++) {
+        passwordArray.push(availableChars[Math.floor(Math.random() * availableChars.length)]);
     }
 
-    let password = "";
-    for (let i = 0; i < length; i++) {
-        password += characters.charAt(Math.floor(Math.random() * characters.length));
+    // Shuffle the password to ensure randomness
+    for (let i = passwordArray.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [passwordArray[i], passwordArray[j]] = [passwordArray[j], passwordArray[i]];
     }
 
-    document.getElementById('password-output').value = password;
+    document.getElementById('password-output').value = passwordArray.join('');
 }
-</script>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[Secure Password Generator]]></summary></entry><entry><title type="html">Custom Code Container</title><link href="https://www.makerlabs.space/post/code-preview/" rel="alternate" type="text/html" title="Custom Code Container" /><published>2025-03-21T18:46:47-04:00</published><updated>2025-03-21T18:46:47-04:00</updated><id>https://www.makerlabs.space/post/code-preview</id><content type="html" xml:base="https://www.makerlabs.space/post/code-preview/"><![CDATA[<p>I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom <code>_include/after-content.html</code> instead of modifying the default layout. The change gets applied to all <code>&#123;% highlight xxxx %&#125;</code> sections and gets implemented at build time. This likely will only work when building the site locally.</p>
+</script>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[Use this tool to generate a secure password with customizable options.]]></summary></entry><entry><title type="html">Custom Code Container</title><link href="https://www.makerlabs.space/post/code-preview/" rel="alternate" type="text/html" title="Custom Code Container" /><published>2025-03-21T18:46:47-04:00</published><updated>2025-03-21T18:46:47-04:00</updated><id>https://www.makerlabs.space/post/code-preview</id><content type="html" xml:base="https://www.makerlabs.space/post/code-preview/"><![CDATA[<p>I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom <code>_include/after-content.html</code> instead of modifying the default layout. The change gets applied to all <code>&#123;% highlight xxxx %&#125;</code> sections and gets implemented at build time. This likely will only work when building the site locally.</p>
 
 <h2 id="_pluginshighlight_overriderb">_plugins/highlight_override.rb</h2>
 <p>This puts the highlighted code block into code-block-container and adds a label for the code type and a copy code button.

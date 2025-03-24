@@ -17,9 +17,9 @@ var store = [{
         "url": "/post/code-preview/",
         "teaser": "/assets/images/Logo.svg"
       },{
-        "title": "password",
-        "excerpt":"Secure Password Generator   Use this tool to generate a secure password with customizable options.   Password Length:         Include Uppercase Letters (A-Z)        Include Lowercase Letters (a-z)        Include Numbers (0-9)        Include Symbols (!@#$%^&amp;*)        Generate Password   Generated Password:       ","categories": ["post"],
+        "title": "Password Generator",
+        "excerpt":"Use this tool to generate a secure password with customizable options.   Password Length:      Generate Password        ","categories": ["post"],
         "tags": [],
-        "url": "/post/password/",
+        "url": "/post/Password-Generator/",
         "teaser": "/assets/images/Logo.svg"
       }]
