@@ -22,4 +22,10 @@ var store = [{
         "tags": [],
         "url": "/post/Password-Generator/",
         "teaser": "/assets/images/Logo.svg"
+      },{
+        "title": "Thesaurus",
+        "excerpt":"Simple Thesaurus Lookup   Enter a word below to find its top synonyms.    Search   Synonyms:      ","categories": ["post"],
+        "tags": [],
+        "url": "/post/thesaurus/",
+        "teaser": "/assets/images/Logo.svg"
       }]

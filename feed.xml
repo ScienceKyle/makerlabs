@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-24T13:29:50-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>A place for me to explore my curiosity and share it with the wotld</subtitle><entry><title type="html">Password Generator</title><link href="https://www.makerlabs.space/post/Password-Generator/" rel="alternate" type="text/html" title="Password Generator" /><published>2025-03-23T17:13:39-04:00</published><updated>2025-03-23T17:13:39-04:00</updated><id>https://www.makerlabs.space/post/Password-Generator</id><content type="html" xml:base="https://www.makerlabs.space/post/Password-Generator/"><![CDATA[<p>Use this tool to generate a secure password with customizable options.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-24T18:15:33-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>A place for me to explore my curiosity and share it with the wotld</subtitle><entry><title type="html">Thesaurus</title><link href="https://www.makerlabs.space/post/thesaurus/" rel="alternate" type="text/html" title="Thesaurus" /><published>2025-03-24T18:02:09-04:00</published><updated>2025-03-24T18:02:09-04:00</updated><id>https://www.makerlabs.space/post/thesaurus</id><content type="html" xml:base="https://www.makerlabs.space/post/thesaurus/"><![CDATA[<h2 id="simple-thesaurus-lookup">Simple Thesaurus Lookup</h2>
+
+<p>Enter a word below to find its top synonyms.</p>
+
+<p><input type="text" id="wordInput" placeholder="Enter a word..." />
+<button onclick="fetchWords()">Search</button></p>
+
+<p><strong>Synonyms:</strong></p>
+<div id="synonyms"></div>
+
+<script>
+    async function fetchWords() {
+        let word = document.getElementById("wordInput").value.trim();
+        if (!word) {
+            document.getElementById("synonyms").innerHTML = "<p>Please enter a word.</p>";
+            return;
+        }
+
+        let apiUrl = `https://api.datamuse.com/words?ml=${word}&max=20`;
+
+        try {
+            let response = await fetch(apiUrl);
+            let data = await response.json();
+
+            if (data.length === 0) {
+                document.getElementById("synonyms").innerHTML = "<p>Nothing found.</p>";
+                return;
+            }
+
+            let synonymsList = data.map(item => item.word).join(", ");
+            document.getElementById("synonyms").innerHTML = `<p> ${synonymsList}</p>`;
+        } catch (error) {
+            document.getElementById("synonyms").innerHTML = "<p>Somethings wrong, try again later.</p>";
+        }
+    }
+</script>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[Simple Thesaurus Lookup]]></summary></entry><entry><title type="html">Password Generator</title><link href="https://www.makerlabs.space/post/Password-Generator/" rel="alternate" type="text/html" title="Password Generator" /><published>2025-03-23T17:13:39-04:00</published><updated>2025-03-23T17:13:39-04:00</updated><id>https://www.makerlabs.space/post/Password-Generator</id><content type="html" xml:base="https://www.makerlabs.space/post/Password-Generator/"><![CDATA[<p>Use this tool to generate a secure password with customizable options.</p>
 
 <p><label for="length">Password Length:</label>
 <input type="number" id="length" min="6" max="64" value="16" /></p>

@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Maker Labs">
 <meta property="og:title" content="Maker Labs">
-<meta property="og:url" content="https://www.makerlabs.space/">
+<meta property="og:url" content="https://www.makerlabs.space/tools/PasswordGenerator/">
 
 
   <meta property="og:description" content="A place for me to explore my curiosity and share it with the wotld">
@@ -35,20 +35,10 @@
 
 
 
-<link rel="canonical" href="https://www.makerlabs.space/">
+<link rel="canonical" href="https://www.makerlabs.space/tools/PasswordGenerator/">
 
 
 
-
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-    "url": "https://www.makerlabs.space/",
-    "sameAs": ["https://github.com/ScienceKyle"]
-}
-</script>
 
 
 
@@ -89,7 +79,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--default">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -155,141 +145,114 @@
 
 
     <div class="initial-content">
-      
+      <style type="text/css" media="screen">
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
 
+  .container {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+  }
 
+  .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
 
-<div id="main" role="main">
-  
+  .form-group label {
+    flex: 1;
+    text-align: right;
+  }
 
+  .form-group input {
+    flex: 1;
+    width: 3em;
+    max-width: 3em;
+  }
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
 
+  #password-output {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 5px;
+    margin-top: 10px;
+  }
+</style>
 
+<div class="container">
+  <h3>Secure Password Generator</h3>
 
-
-
-<div class="entries-list">
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/post/thesaurus/" rel="permalink">Thesaurus
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Simple Thesaurus Lookup
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/post/Password-Generator/" rel="permalink">Password Generator
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">Use this tool to generate a secure password with customizable options.
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/post/code-preview/" rel="permalink">Custom Code Container
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom _incl...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/favicon-script/" rel="permalink">Favicon Script
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to u...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/homelab/post-1/" rel="permalink">Homelab Setup
-</a>
-      
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">I’m building a homelab for virtualization and development of Ai applications and other random widgets.
-</p>
-  </article>
-</div>
-
-  
-</div>
-
-
-
-
+  <div class="form-group">
+    <label for="length">Length:</label>
+    <input type="number" id="length" min="6" max="64" value="16" />
   </div>
+
+  <button onclick="generatePassword()">Generate Password</button>
+
+  <input type="text" id="password-output" readonly="" />
 </div>
+
+<script>
+function generatePassword() {
+    const length = parseInt(document.getElementById('length').value, 10);
+    
+    const uppercase = "ABCDEFGHJKMNPQRSTUVWXYZ";
+    const lowercase = "abcdefghjkmnpqrstuvwxyz";
+    const numbers = "123456789";
+    const symbols = "!@#$%^&*";
+
+    let availableChars = "";
+    let guaranteedChars = [];
+
+    availableChars += uppercase;
+    guaranteedChars.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
+  
+    availableChars += lowercase;
+    guaranteedChars.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
+
+    availableChars += numbers;
+    guaranteedChars.push(numbers[Math.floor(Math.random() * numbers.length)]);
+    
+    availableChars += symbols;
+    guaranteedChars.push(symbols[Math.floor(Math.random() * symbols.length)]);
+
+    // Fill the rest of the password length with random choices
+    let remainingLength = length - guaranteedChars.length;
+    let passwordArray = guaranteedChars;
+
+    for (let i = 0; i < remainingLength; i++) {
+        passwordArray.push(availableChars[Math.floor(Math.random() * availableChars.length)]);
+    }
+
+    // Shuffle the password to ensure randomness
+    for (let i = passwordArray.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [passwordArray[i], passwordArray[j]] = [passwordArray[j], passwordArray[i]];
+    }
+
+    document.getElementById('password-output').value = passwordArray.join('');
+}
+</script>
+
 
       <style>
 
