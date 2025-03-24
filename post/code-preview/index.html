@@ -53,8 +53,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link rel="icon" type="image/x-icon" href="https://www.makerlabs.space/favicon.ico">
- 
+
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Maker Labs Feed">
 
@@ -98,7 +97,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/assets/images/Logo.png" alt="Maker Labs"></a>
+          <a class="site-logo" href="/"><img src="/assets/images/Logo.svg" alt="Maker Labs"></a>
         
         <a class="site-title" href="/">
           Maker Labs
@@ -118,7 +117,13 @@
               >Gallery</a>
             </li><li class="masthead__menu-item">
               <a
-                href="/tools/"
+                href="/units/"
+                
+                
+              >Unit Converter</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/default/"
                 
                 
               >Tools</a>
@@ -257,7 +262,7 @@
 <span class="c1">// Find all code blocks</span>
 <span class="kd">let</span> <span class="nx">blocks</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.code-block-container</span><span class="dl">"</span><span class="p">);</span>
 
-<span class="nx">blocks</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">block</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">blocks</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">blocks</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">block</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.copy-button</span><span class="dl">"</span><span class="p">);</span>
 
   <span class="c1">// Add copy button functionality if Clipboard API is supported</span>
@@ -383,10 +388,12 @@ blocks.forEach((block) => {
         
       
     
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> RSS</a></li>
   </ul>
 </div>
 
 <div class="page__footer-copyright">&copy; 2025 <a href="https://www.makerlabs.space">Maker Labs</a></div>
+</div>
 
       </footer>
     </div>

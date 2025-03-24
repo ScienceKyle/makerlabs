@@ -11,7 +11,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Favicon Script - Maker Labs</title>
-<meta name="description" content="Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux">
+<meta name="description" content="&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to use it. A favicon, short for &quot;favorite icon,&quot; is a small image associated with a website. It appears in browser tabs, bookmarks, and other locations to identify this site. &nbsp;&nbsp;&nbsp;&nbsp;Favicons need to be available in multiple sizes to accommodate different devices and display contexts. The most common way to package them is in a multi-resolution .ico file, which contains several versions of the icon ranging from 16x16 pixels to 512x512 pixels. This ensures compatibility across web browsers, operating systems, and mobile devices. &nbsp;&nbsp;&nbsp;&nbsp;To create a favicon that remains sharp and clear at all sizes, I chose to use an SVG file as the starting point. Unlike raster images such as PNG or JPG, an SVG is a vector-based format, meaning it can be scaled to any size without losing quality. This approach avoids pixelation or blurring that often occurs when resizing raster images, ensuring crisp edges and smooth curves at every resolution. &nbsp;&nbsp;&nbsp;&nbsp;The script I wrote automates the process of generating a favicon from an SVG. It begins by checking that the necessary files and directories exist, ensuring that the workflow runs smoothly. Using Inkscape, it scales the SVG to multiple standard favicon sizes. Each scaled version is then converted to PNG format while preserving the original clarity of the design. To prevent transparency issues, ImageMagick processes the images by adding a solid white background where needed. Finally, all PNG versions are combined into a single .ico file, which is compatible with web browsers and other applications. The script also cleans up temporary files, keeping the directory structure organized.">
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://www.makerlabs.space/favicon-script/">
 
 
-  <meta property="og:description" content="Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux">
+  <meta property="og:description" content="&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to use it. A favicon, short for &quot;favorite icon,&quot; is a small image associated with a website. It appears in browser tabs, bookmarks, and other locations to identify this site. &nbsp;&nbsp;&nbsp;&nbsp;Favicons need to be available in multiple sizes to accommodate different devices and display contexts. The most common way to package them is in a multi-resolution .ico file, which contains several versions of the icon ranging from 16x16 pixels to 512x512 pixels. This ensures compatibility across web browsers, operating systems, and mobile devices. &nbsp;&nbsp;&nbsp;&nbsp;To create a favicon that remains sharp and clear at all sizes, I chose to use an SVG file as the starting point. Unlike raster images such as PNG or JPG, an SVG is a vector-based format, meaning it can be scaled to any size without losing quality. This approach avoids pixelation or blurring that often occurs when resizing raster images, ensuring crisp edges and smooth curves at every resolution. &nbsp;&nbsp;&nbsp;&nbsp;The script I wrote automates the process of generating a favicon from an SVG. It begins by checking that the necessary files and directories exist, ensuring that the workflow runs smoothly. Using Inkscape, it scales the SVG to multiple standard favicon sizes. Each scaled version is then converted to PNG format while preserving the original clarity of the design. To prevent transparency issues, ImageMagick processes the images by adding a solid white background where needed. Finally, all PNG versions are combined into a single .ico file, which is compatible with web browsers and other applications. The script also cleans up temporary files, keeping the directory structure organized.">
 
 
 
@@ -53,8 +53,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link rel="icon" type="image/x-icon" href="https://www.makerlabs.space/favicon.ico">
- 
+
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Maker Labs Feed">
 
@@ -98,7 +97,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/assets/images/Logo.png" alt="Maker Labs"></a>
+          <a class="site-logo" href="/"><img src="/assets/images/Logo.svg" alt="Maker Labs"></a>
         
         <a class="site-title" href="/">
           Maker Labs
@@ -118,7 +117,13 @@
               >Gallery</a>
             </li><li class="masthead__menu-item">
               <a
-                href="/tools/"
+                href="/units/"
+                
+                
+              >Unit Converter</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/default/"
                 
                 
               >Tools</a>
@@ -154,9 +159,22 @@
     
       <h1 id="page-title" class="page__title">Favicon Script</h1>
     
-    <p>Hopefully your browser tab shows my makerlabs logo. I used this script to generate a multilayer favicon and put it in the site root ditectory. It uses the imagemagick pkg on termux</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to use it. A favicon, short for "favorite icon," is a small image associated with a website. It appears in browser tabs, bookmarks, and other locations to identify this site.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Favicons need to be available in multiple sizes to accommodate different devices and display contexts. The most common way to package them is in a multi-resolution .ico file, which contains several versions of the icon ranging from 16x16 pixels to 512x512 pixels. This ensures compatibility across web browsers, operating systems, and mobile devices.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;To create a favicon that remains sharp and clear at all sizes, I chose to use an SVG file as the starting point. Unlike raster images such as PNG or JPG, an SVG is a vector-based format, meaning it can be scaled to any size without losing quality. This approach avoids pixelation or blurring that often occurs when resizing raster images, ensuring crisp edges and smooth curves at every resolution.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The script I wrote automates the process of generating a favicon from an SVG. It begins by checking that the necessary files and directories exist, ensuring that the workflow runs smoothly. Using Inkscape, it scales the SVG to multiple standard favicon sizes. Each scaled version is then converted to PNG format while preserving the original clarity of the design. To prevent transparency issues, ImageMagick processes the images by adding a solid white background where needed. Finally, all PNG versions are combined into a single .ico file, which is compatible with web browsers and other applications. The script also cleans up temporary files, keeping the directory structure organized.</p>
 
-<p><img src="../favicon.ico" alt="favicon.ico" /></p>
+<div style="display: flex; gap: 10px; align-items: center;">
+    <img src="../favicon-16.png" alt="16x16" width="192" height="192" />
+    <img src="../favicon.svg" alt="16x16 svg" width="1" height="1" />
+        <img src="../favicon-32.png" alt="32x32" width="192" height="192" />
+    <img src="../favicon.svg" alt="32x32 svg" width="32" height="32" />
+</div>
+
+<div style="display: flex; gap: 10px; align-items: center;">
+    <img src="../favicon-192.png" alt="192x192" width="192" height="192" />
+    <img src="../favicon.svg" alt="192x192 svg" width="192" height="192" />
+</div>
 
 <div class="code-block-container">
   <div class="code-header">
@@ -164,22 +182,70 @@
     <button class="copy-button">Copy Code</button>
   </div>
   <div class="code-block">
-    <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">cd </span>assets/images/
-magick Logo.png <span class="nt">-resize</span> 16x16 favicon-16.png
-magick Logo.png <span class="nt">-resize</span> 32x32 favicon-32.png
-magick Logo.png <span class="nt">-resize</span> 48x48 favicon-48.png
-magick Logo.png <span class="nt">-resize</span> 64x64 favicon-64.png
-magick Logo.png <span class="nt">-resize</span> 128x128 favicon-128.png
-magick Logo.png <span class="nt">-resize</span> 144x144 favicon-144.png
-magick Logo.png <span class="nt">-resize</span> 180x180 favicon-180.png
-magick Logo.png <span class="nt">-resize</span> 192x192 favicon-192.png
-magick Logo.png <span class="nt">-resize</span> 256x256 favicon-256.png
-magick Logo.png <span class="nt">-resize</span> 512x512 favicon-512.png
-magick favicon-16.png favicon-32.png favicon-48.png favicon-64.png favicon-128.png favicon-144.png favicon-180.png favicon-192.png favicon-256.png favicon-512.png favicon.ico
-<span class="nb">mv </span>favicon.ico ../../
-<span class="nb">cd</span> ../../</code></pre></figure>
+    <figure class="highlight"><pre><code class="language-shell" data-lang="shell">pkg update <span class="o">&amp;&amp;</span> pkg upgrade
+pkg <span class="nb">install </span>imagemagick inkscape</code></pre></figure>
   </div>
 </div>
+
+<div class="code-block-container">
+  <div class="code-header">
+    <strong>bash</strong>
+    <button class="copy-button">Copy Code</button>
+  </div>
+  <div class="code-block">
+    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/data/data/com.termux/files/usr/bin/bash</span>
+
+<span class="c"># Check if assets/images directory exists</span>
+<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-d</span> <span class="s2">"assets/images"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Error: Directory 'assets/images/' not found."</span>
+    <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># Check if favicon.svg exists in the parent directory</span>
+<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-f</span> <span class="s2">"assets/images/favicon.svg"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Error: File 'favicon.svg' not found."</span>
+    <span class="nb">exit </span>2
+<span class="k">fi
+
+</span><span class="nb">cd </span>assets/images/
+<span class="nb">mkdir</span> <span class="nt">-p</span> favicon
+<span class="nb">cd </span>favicon
+
+<span class="c"># Define sizes</span>
+<span class="nv">sizes</span><span class="o">=(</span>16 32 140 192 409 512<span class="o">)</span>
+
+<span class="c"># Scale SVG to different sizes</span>
+<span class="k">for </span>size <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">sizes</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+    </span>inkscape <span class="nt">-w</span> <span class="nv">$size</span> <span class="nt">-h</span> <span class="nv">$size</span> <span class="nt">--export-png-compression</span><span class="o">=</span>0 <span class="nt">--export-png-antialias</span><span class="o">=</span>2 <span class="nt">-b</span> <span class="s2">"#FFFFFF"</span> <span class="nt">-y</span> 0.0 <span class="nt">--export-png-color-mode</span><span class="o">=</span>RGBA_8 ../favicon.svg <span class="nt">-o</span> favicon-<span class="k">${</span><span class="nv">size</span><span class="k">}</span>.png 2&gt;/dev/null
+<span class="k">done</span>
+
+<span class="c"># Combine 16x16 and 32x32 into favicon.ico</span>
+magick favicon-32.png favicon-16.png favicon.ico
+
+magick favicon-140.png <span class="nt">-background</span> <span class="s2">"#770000"</span> <span class="nt">-gravity</span> center <span class="nt">-extent</span> 180x180 apple-touch-icon.png
+
+magick favicon-409.png <span class="nt">-background</span> <span class="s2">"#770000"</span> <span class="nt">-gravity</span> center <span class="nt">-extent</span> 512x512 favicon_mask.png
+<span class="nb">cp</span> <span class="k">*</span> ../../../
+<span class="nb">cp</span> ../favicon.svg ../../../
+<span class="nb">cd</span> ../../../
+<span class="nb">echo</span> <span class="s2">"Success: </span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">/favicon.ico"</span></code></pre></figure>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const svgDot = `<img src="../favicon.svg" width="2" height="2" style="display: inline-block; transform: translate(.05em,.22em);">`;
+    
+    function replacePeriodsWithSVG() {
+        document.querySelectorAll("p").forEach(el => {
+            el.innerHTML = el.innerHTML.replace(/\./g, svgDot);
+        });
+    }
+
+    replacePeriodsWithSVG();
+});
+</script>
+
 
   </div>
 </div>
@@ -282,10 +348,12 @@ blocks.forEach((block) => {
         
       
     
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> RSS</a></li>
   </ul>
 </div>
 
 <div class="page__footer-copyright">&copy; 2025 <a href="https://www.makerlabs.space">Maker Labs</a></div>
+</div>
 
       </footer>
     </div>
