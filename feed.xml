@@ -1,104 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-24T18:32:37-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>A place for me to explore my curiosity and share it with the wotld</subtitle><entry><title type="html">Thesaurus</title><link href="https://www.makerlabs.space/post/thesaurus/" rel="alternate" type="text/html" title="Thesaurus" /><published>2025-03-24T18:02:09-04:00</published><updated>2025-03-24T18:02:09-04:00</updated><id>https://www.makerlabs.space/post/thesaurus</id><content type="html" xml:base="https://www.makerlabs.space/post/thesaurus/"><![CDATA[<h2 id="advanced-thesaurus-lookup">Advanced Thesaurus Lookup</h2>
-
-<p>Select a query type, enter a word, and see results!</p>
-
-<p><select id="queryType">
-    <option value="rel_syn">Synonyms</option>
-    <option value="ml">Similar Meaning</option>
-    <option value="sl">Sound Like</option>
-    <option value="rel_jjb">Related Adjectives</option>
-    <option value="rel_jja">Related Nouns </option>
-    <option value="lc">Words that follow</option>
-    <option value="rel_trg">Associated Words</option>
-    <option value="sug">Spelling Suggestions</option>
-</select></p>
-
-<p><input type="text" id="wordInput" placeholder="Enter a word or pattern..." />
-<button onclick="fetchWords()">Search</button></p>
-
-<h2 id="results">Results:</h2>
-<div id="results"></div>
-
-<script>
-    async function fetchWords() {
-        let word = document.getElementById("wordInput").value.trim();
-        let queryType = document.getElementById("queryType").value;
-        
-        if (!word) {
-            document.getElementById("results").innerHTML = "<p>Please enter a word.</p>";
-            return;
-        }
-
-        let apiUrl = `https://api.datamuse.com/words?${queryType}=${encodeURIComponent(word)}&max=30`;
-
-        try {
-            let response = await fetch(apiUrl);
-            let data = await response.json();
-
-            if (data.length === 0) {
-                document.getElementById("results").innerHTML = "<p>No results found.</p>";
-                return;
-            }
-
-            let wordsList = data.map(item => item.word).join(", ");
-            document.getElementById("results").innerHTML = `<p>${wordsList}</p>`;
-        } catch (error) {
-            document.getElementById("results").innerHTML = "<p>Error fetching data. Try again later.</p>";
-        }
-    }
-</script>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[Advanced Thesaurus Lookup]]></summary></entry><entry><title type="html">Password Generator</title><link href="https://www.makerlabs.space/post/Password-Generator/" rel="alternate" type="text/html" title="Password Generator" /><published>2025-03-23T17:13:39-04:00</published><updated>2025-03-23T17:13:39-04:00</updated><id>https://www.makerlabs.space/post/Password-Generator</id><content type="html" xml:base="https://www.makerlabs.space/post/Password-Generator/"><![CDATA[<p>Use this tool to generate a secure password with customizable options.</p>
-
-<p><label for="length">Password Length:</label>
-<input type="number" id="length" min="6" max="64" value="16" /></p>
-
-<p><br />
-<button onclick="generatePassword()">Generate Password</button></p>
-
-<p><input type="text" id="password-output" readonly="" style="width: 100%; font-size: 1.2em;" /></p>
-
-<script>
-function generatePassword() {
-    const length = parseInt(document.getElementById('length').value, 10);
-    
-    const uppercase = "ABCDEFGHJKMNPQRSTUVWXYZ";
-    const lowercase = "abcdefghjkmnpqrstuvwxyz";
-    const numbers = "123456789";
-    const symbols = "!@#$%^&*";
-
-    let availableChars = "";
-    let guaranteedChars = [];
-
-  
-        availableChars += uppercase;
-        guaranteedChars.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
-  
-        availableChars += lowercase;
-        guaranteedChars.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
-
-        availableChars += numbers;
-        guaranteedChars.push(numbers[Math.floor(Math.random() * numbers.length)]);
-    
-        availableChars += symbols;
-        guaranteedChars.push(symbols[Math.floor(Math.random() * symbols.length)]);
-
-
-    // Fill the rest of the password length with random choices
-    let remainingLength = length - guaranteedChars.length;
-    let passwordArray = guaranteedChars;
-
-    for (let i = 0; i < remainingLength; i++) {
-        passwordArray.push(availableChars[Math.floor(Math.random() * availableChars.length)]);
-    }
-
-    // Shuffle the password to ensure randomness
-    for (let i = passwordArray.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [passwordArray[i], passwordArray[j]] = [passwordArray[j], passwordArray[i]];
-    }
-
-    document.getElementById('password-output').value = passwordArray.join('');
-}
-</script>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[Use this tool to generate a secure password with customizable options.]]></summary></entry><entry><title type="html">Custom Code Container</title><link href="https://www.makerlabs.space/post/code-preview/" rel="alternate" type="text/html" title="Custom Code Container" /><published>2025-03-21T18:46:47-04:00</published><updated>2025-03-21T18:46:47-04:00</updated><id>https://www.makerlabs.space/post/code-preview</id><content type="html" xml:base="https://www.makerlabs.space/post/code-preview/"><![CDATA[<p>I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom <code>_include/after-content.html</code> instead of modifying the default layout. The change gets applied to all <code>&#123;% highlight xxxx %&#125;</code> sections and gets implemented at build time. This likely will only work when building the site locally.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.makerlabs.space/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.makerlabs.space/" rel="alternate" type="text/html" /><updated>2025-03-25T01:11:55-04:00</updated><id>https://www.makerlabs.space/feed.xml</id><title type="html">Maker Labs</title><subtitle>A place for me to explore my curiosity and share it with the wotld</subtitle><entry><title type="html">Custom Code Container</title><link href="https://www.makerlabs.space/post/2025/03/21/code-preview.html" rel="alternate" type="text/html" title="Custom Code Container" /><published>2025-03-21T18:46:47-04:00</published><updated>2025-03-21T18:46:47-04:00</updated><id>https://www.makerlabs.space/post/2025/03/21/code-preview</id><content type="html" xml:base="https://www.makerlabs.space/post/2025/03/21/code-preview.html"><![CDATA[<p>I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom <code>_include/after-content.html</code> instead of modifying the default layout. The change gets applied to all <code>&#123;% highlight xxxx %&#125;</code> sections and gets implemented at build time. This likely will only work when building the site locally.</p>
 
 <h2 id="_pluginshighlight_overriderb">_plugins/highlight_override.rb</h2>
 <p>This puts the highlighted code block into code-block-container and adds a label for the code type and a copy code button.
@@ -223,22 +123,12 @@ function generatePassword() {
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
   </div>
-</div>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom _include/after-content.html instead of modifying the default layout. The change gets applied to all &#123;% highlight xxxx %&#125; sections and gets implemented at build time. This likely will only work when building the site locally.]]></summary></entry><entry><title type="html">Favicon Script</title><link href="https://www.makerlabs.space/favicon-script/" rel="alternate" type="text/html" title="Favicon Script" /><published>2025-03-21T11:53:58-04:00</published><updated>2025-03-21T11:53:58-04:00</updated><id>https://www.makerlabs.space/favicon-script</id><content type="html" xml:base="https://www.makerlabs.space/favicon-script/"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to use it. A favicon, short for "favorite icon," is a small image associated with a website. It appears in browser tabs, bookmarks, and other locations to identify this site.</p>
+</div>]]></content><author><name></name></author><category term="post" /><summary type="html"><![CDATA[I wasn't happy with how code was formatting in these posts. ChatGPT was able to help me extend Rouge highlighting built into Jekyll. I created a custom _include/after-content.html instead of modifying the default layout. The change gets applied to all &#123;% highlight xxxx %&#125; sections and gets implemented at build time. This likely will only work when building the site locally.]]></summary></entry><entry><title type="html">Favicon Script</title><link href="https://www.makerlabs.space/2025/03/21/favicon-script.html" rel="alternate" type="text/html" title="Favicon Script" /><published>2025-03-21T11:53:58-04:00</published><updated>2025-03-21T11:53:58-04:00</updated><id>https://www.makerlabs.space/2025/03/21/favicon-script</id><content type="html" xml:base="https://www.makerlabs.space/2025/03/21/favicon-script.html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to use it. A favicon, short for "favorite icon," is a small image associated with a website. It appears in browser tabs, bookmarks, and other locations to identify this site.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Favicons need to be available in multiple sizes to accommodate different devices and display contexts. The most common way to package them is in a multi-resolution .ico file, which contains several versions of the icon ranging from 16x16 pixels to 512x512 pixels. This ensures compatibility across web browsers, operating systems, and mobile devices.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;To create a favicon that remains sharp and clear at all sizes, I chose to use an SVG file as the starting point. Unlike raster images such as PNG or JPG, an SVG is a vector-based format, meaning it can be scaled to any size without losing quality. This approach avoids pixelation or blurring that often occurs when resizing raster images, ensuring crisp edges and smooth curves at every resolution.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The script I wrote automates the process of generating a favicon from an SVG. It begins by checking that the necessary files and directories exist, ensuring that the workflow runs smoothly. Using Inkscape, it scales the SVG to multiple standard favicon sizes. Each scaled version is then converted to PNG format while preserving the original clarity of the design. To prevent transparency issues, ImageMagick processes the images by adding a solid white background where needed. Finally, all PNG versions are combined into a single .ico file, which is compatible with web browsers and other applications. The script also cleans up temporary files, keeping the directory structure organized.</p>
 
-<div style="display: flex; gap: 10px; align-items: center;">
-    <img src="../favicon-16.png" alt="16x16" width="192" height="192" />
-    <img src="../favicon.svg" alt="16x16 svg" width="1" height="1" />
-        <img src="../favicon-32.png" alt="32x32" width="192" height="192" />
-    <img src="../favicon.svg" alt="32x32 svg" width="32" height="32" />
-</div>
-
-<div style="display: flex; gap: 10px; align-items: center;">
-    <img src="../favicon-192.png" alt="192x192" width="192" height="192" />
-    <img src="../favicon.svg" alt="192x192 svg" width="192" height="192" />
-</div>
+<p><img src="../../../favicon.svg" alt="192x192 svg" width="192" height="192" /></p>
 
 <div class="code-block-container">
   <div class="code-header">
@@ -260,11 +150,10 @@ pkg <span class="nb">install </span>imagemagick inkscape</code></pre></figure>
     <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/data/data/com.termux/files/usr/bin/bash</span>
 
 <span class="c"># Check if assets/images directory exists</span>
-<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-d</span> <span class="s2">"assets/images"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+<span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-d</span> <span class="s2">"assets/images/"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
     </span><span class="nb">echo</span> <span class="s2">"Error: Directory 'assets/images/' not found."</span>
     <span class="nb">exit </span>1
 <span class="k">fi</span>
-
 <span class="c"># Check if favicon.svg exists in the parent directory</span>
 <span class="k">if</span> <span class="o">[</span> <span class="o">!</span> <span class="nt">-f</span> <span class="s2">"assets/images/favicon.svg"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
     </span><span class="nb">echo</span> <span class="s2">"Error: File 'favicon.svg' not found."</span>
@@ -272,43 +161,42 @@ pkg <span class="nb">install </span>imagemagick inkscape</code></pre></figure>
 <span class="k">fi
 
 </span><span class="nb">cd </span>assets/images/
-<span class="nb">mkdir</span> <span class="nt">-p</span> favicon
-<span class="nb">cd </span>favicon
+<span class="nb">mkdir</span> <span class="nt">-p</span> favicons
+<span class="nb">cd </span>favicons
 
-<span class="c"># Define sizes</span>
 <span class="nv">sizes</span><span class="o">=(</span>16 32 140 192 409 512<span class="o">)</span>
 
-<span class="c"># Scale SVG to different sizes</span>
 <span class="k">for </span>size <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">sizes</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
     </span>inkscape <span class="nt">-w</span> <span class="nv">$size</span> <span class="nt">-h</span> <span class="nv">$size</span> <span class="nt">--export-png-compression</span><span class="o">=</span>0 <span class="nt">--export-png-antialias</span><span class="o">=</span>2 <span class="nt">-b</span> <span class="s2">"#FFFFFF"</span> <span class="nt">-y</span> 0.0 <span class="nt">--export-png-color-mode</span><span class="o">=</span>RGBA_8 ../favicon.svg <span class="nt">-o</span> favicon-<span class="k">${</span><span class="nv">size</span><span class="k">}</span>.png 2&gt;/dev/null
 <span class="k">done</span>
 
 <span class="c"># Combine 16x16 and 32x32 into favicon.ico</span>
-magick favicon-32.png favicon-16.png favicon.ico
+magick favicon-32.png favicon-16.png <span class="nt">-colors</span> 256 favicon.ico
 
-magick favicon-140.png <span class="nt">-background</span> <span class="s2">"#770000"</span> <span class="nt">-gravity</span> center <span class="nt">-extent</span> 180x180 apple-touch-icon.png
+magick favicon-140.png <span class="nt">-background</span> <span class="s2">"#700000"</span> <span class="nt">-gravity</span> center <span class="nt">-extent</span> 180x180 apple-touch-icon.png
 
-magick favicon-409.png <span class="nt">-background</span> <span class="s2">"#770000"</span> <span class="nt">-gravity</span> center <span class="nt">-extent</span> 512x512 favicon_mask.png
-<span class="nb">cp</span> <span class="k">*</span> ../../../
-<span class="nb">cp</span> ../favicon.svg ../../../
+magick favicon-409.png <span class="nt">-background</span> <span class="s2">"#700000"</span> <span class="nt">-gravity</span> center <span class="nt">-extent</span> 512x512 favicon_mask.png
+
+<span class="nb">mv </span>favicon.ico ../../../
+<span class="nb">cp </span>favicon.svg ../../../
+<span class="nb">mv </span>apple-touch-icon.png ../../../
+<span class="nb">mv </span>favicon_mask.png ../../../
 <span class="nb">cd</span> ../../../
-<span class="nb">echo</span> <span class="s2">"Success: </span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">/favicon.ico"</span></code></pre></figure>
+
+<span class="nb">rm </span>_includes/favicon.html 2&gt;/dev/null
+<span class="nb">touch </span>_includes/favicon.html
+<span class="nv">href</span><span class="o">=</span><span class="se">\"</span>/favicon.ico<span class="se">\"</span> <span class="nv">sizes</span><span class="o">=</span><span class="se">\"</span>32x32<span class="se">\"</span><span class="o">&gt;</span><span class="s2">" &gt;&gt; _includes/favicon.html
+echo "</span>&lt;<span class="nb">link </span><span class="nv">rel</span><span class="o">=</span><span class="se">\"</span>icon<span class="se">\"</span> <span class="nv">href</span><span class="o">=</span><span class="se">\"</span>/favicon.svg<span class="se">\"</span> <span class="nb">type</span><span class="o">=</span><span class="se">\"</span>image/svg+xml<span class="se">\"</span><span class="o">&gt;</span><span class="s2">" &gt;&gt; _includes/favicon.html
+echo "</span>&lt;<span class="nb">link </span><span class="nv">rel</span><span class="o">=</span><span class="se">\"</span>apple-touch-icon<span class="se">\"</span> <span class="nv">href</span><span class="o">=</span><span class="se">\"</span>/apple-touch-icon.png<span class="se">\"</span> <span class="nb">type</span><span class="o">=</span><span class="se">\"</span>image/png<span class="se">\"</span> <span class="nv">sizes</span><span class="o">=</span><span class="se">\"</span>180x180<span class="se">\"</span><span class="o">&gt;</span><span class="s2">" &gt;&gt; _includes/favicon.html
+echo "</span>&lt;<span class="nb">link </span><span class="nv">rel</span><span class="o">=</span><span class="se">\"</span>icon<span class="se">\"</span> <span class="nv">href</span><span class="o">=</span><span class="se">\"</span>/favicon-mask.png<span class="se">\"</span> <span class="nb">type</span><span class="o">=</span><span class="se">\"</span>image/png<span class="se">\"</span> <span class="nv">sizes</span><span class="o">=</span><span class="se">\"</span>512x512<span class="se">\"</span> <span class="nv">purpose</span><span class="o">=</span><span class="se">\"</span>maskable<span class="se">\"</span><span class="o">&gt;</span><span class="s2">" &gt;&gt; _includes/favicon.html
+
+for size in "</span><span class="k">${</span><span class="nv">sizes</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"; do
+    echo "</span>&lt;<span class="nb">link </span><span class="nv">rel</span><span class="o">=</span><span class="se">\"</span>icon<span class="se">\"</span> <span class="nv">href</span><span class="o">=</span><span class="se">\"</span>/assets/images/favicons/favicon-<span class="k">${</span><span class="nv">size</span><span class="k">}</span>.png<span class="se">\"</span> <span class="nb">type</span><span class="o">=</span><span class="se">\"</span>image/png<span class="se">\"</span> <span class="nv">sizes</span><span class="o">=</span><span class="se">\"</span><span class="k">${</span><span class="nv">size</span><span class="k">}</span>x<span class="k">${</span><span class="nv">size</span><span class="k">}</span><span class="se">\"</span><span class="o">&gt;</span><span class="s2">" &gt;&gt; _includes/favicon.html
+done
+
+echo "</span>Success: <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/favicon.ico<span class="s2">" </span></code></pre></figure>
   </div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const svgDot = `<img src="../favicon.svg" width="2" height="2" style="display: inline-block; transform: translate(.05em,.22em);">`;
-    
-    function replacePeriodsWithSVG() {
-        document.querySelectorAll("p").forEach(el => {
-            el.innerHTML = el.innerHTML.replace(/\./g, svgDot);
-        });
-    }
-
-    replacePeriodsWithSVG();
-});
-</script>]]></content><author><name></name></author><summary type="html"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to use it. A favicon, short for "favorite icon," is a small image associated with a website. It appears in browser tabs, bookmarks, and other locations to identify this site. &nbsp;&nbsp;&nbsp;&nbsp;Favicons need to be available in multiple sizes to accommodate different devices and display contexts. The most common way to package them is in a multi-resolution .ico file, which contains several versions of the icon ranging from 16x16 pixels to 512x512 pixels. This ensures compatibility across web browsers, operating systems, and mobile devices. &nbsp;&nbsp;&nbsp;&nbsp;To create a favicon that remains sharp and clear at all sizes, I chose to use an SVG file as the starting point. Unlike raster images such as PNG or JPG, an SVG is a vector-based format, meaning it can be scaled to any size without losing quality. This approach avoids pixelation or blurring that often occurs when resizing raster images, ensuring crisp edges and smooth curves at every resolution. &nbsp;&nbsp;&nbsp;&nbsp;The script I wrote automates the process of generating a favicon from an SVG. It begins by checking that the necessary files and directories exist, ensuring that the workflow runs smoothly. Using Inkscape, it scales the SVG to multiple standard favicon sizes. Each scaled version is then converted to PNG format while preserving the original clarity of the design. To prevent transparency issues, ImageMagick processes the images by adding a solid white background where needed. Finally, all PNG versions are combined into a single .ico file, which is compatible with web browsers and other applications. The script also cleans up temporary files, keeping the directory structure organized.]]></summary></entry><entry><title type="html">Homelab Setup</title><link href="https://www.makerlabs.space/homelab/post-1/" rel="alternate" type="text/html" title="Homelab Setup" /><published>2025-03-17T03:37:05-04:00</published><updated>2025-03-17T03:37:05-04:00</updated><id>https://www.makerlabs.space/homelab/post-1</id><content type="html" xml:base="https://www.makerlabs.space/homelab/post-1/"><![CDATA[<p>I’m building a homelab for virtualization and development of Ai applications and other random widgets.</p>
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;Hopefully your browser tab shows my makerlabs logo. I used a shell script to generate a multilayer favicon and told your browser to use it. A favicon, short for "favorite icon," is a small image associated with a website. It appears in browser tabs, bookmarks, and other locations to identify this site. &nbsp;&nbsp;&nbsp;&nbsp;Favicons need to be available in multiple sizes to accommodate different devices and display contexts. The most common way to package them is in a multi-resolution .ico file, which contains several versions of the icon ranging from 16x16 pixels to 512x512 pixels. This ensures compatibility across web browsers, operating systems, and mobile devices. &nbsp;&nbsp;&nbsp;&nbsp;To create a favicon that remains sharp and clear at all sizes, I chose to use an SVG file as the starting point. Unlike raster images such as PNG or JPG, an SVG is a vector-based format, meaning it can be scaled to any size without losing quality. This approach avoids pixelation or blurring that often occurs when resizing raster images, ensuring crisp edges and smooth curves at every resolution. &nbsp;&nbsp;&nbsp;&nbsp;The script I wrote automates the process of generating a favicon from an SVG. It begins by checking that the necessary files and directories exist, ensuring that the workflow runs smoothly. Using Inkscape, it scales the SVG to multiple standard favicon sizes. Each scaled version is then converted to PNG format while preserving the original clarity of the design. To prevent transparency issues, ImageMagick processes the images by adding a solid white background where needed. Finally, all PNG versions are combined into a single .ico file, which is compatible with web browsers and other applications. The script also cleans up temporary files, keeping the directory structure organized.]]></summary></entry><entry><title type="html">Homelab Setup</title><link href="https://www.makerlabs.space/homelab/2025/03/17/post-1.html" rel="alternate" type="text/html" title="Homelab Setup" /><published>2025-03-17T03:37:05-04:00</published><updated>2025-03-17T03:37:05-04:00</updated><id>https://www.makerlabs.space/homelab/2025/03/17/post-1</id><content type="html" xml:base="https://www.makerlabs.space/homelab/2025/03/17/post-1.html"><![CDATA[<p>I’m building a homelab for virtualization and development of Ai applications and other random widgets.</p>
 
 <ul>
   <li>
