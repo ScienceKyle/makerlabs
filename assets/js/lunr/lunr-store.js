@@ -18,9 +18,15 @@ var store = [{
         "teaser": "/assets/images/Logo.svg"
       },{
         "title": "Tools",
-        "excerpt":"          Password Generator - Generate random secure password            Thesaurus - Generate secure passwords with customizable settings.            Unit Converter - Mostly useful unit converter.      ","categories": [],
+        "excerpt":"          LLM - Llama3.1 chat            Password Generator - Generate random secure password            Thesaurus - Generate secure passwords with customizable settings.            Unit Converter - Mostly useful unit converter.      ","categories": [],
         "tags": [],
         "url": "/tools/",
+        "teaser": "/assets/images/Logo.svg"
+      },{
+        "title": "LLM",
+        "excerpt":"                 Send a message to start                     Send        ","categories": [],
+        "tags": [],
+        "url": "/tools/llm/",
         "teaser": "/assets/images/Logo.svg"
       },{
         "title": "Password Generator",
